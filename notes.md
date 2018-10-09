@@ -1,32 +1,89 @@
-Add to ~/.bashrc (correct "ardanausername" to what you use
+QUICK GUIDE:
+============
+
+1. Add to ~/.bashrc (replace "ardanausername" to what you use.)
 
 ```
-  export ARDANA_DEVELOPER=True
-  export ARDANA_VAGRANT_VERSION=1.8.7
-  export ARDANAUSER=ardanausername
-  export ARDANA_SITE=provo
-  eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
+export ARDANA_DEVELOPER=True
+export ARDANA_VAGRANT_VERSION=1.8.7
+export ARDANAUSER=ardanausername
+export ARDANA_SITE=provo
+eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
 ```
 
-Install git:
+2. Install git:
 
 ```
-   sudo zypper install git-core
+sudo zypper install git-core
+```
+3. Install OSC
+```
+sudo zypper install osc
+```
+and connect to osc for the first time to configure credentials and certificates:
+```
+ardana@clm:~> osc ls
+
+the apiurl 'https://api.suse.de' does not exist in the config file. Please enter
+your credentials for this apiurl.
+
+Username: someusername
+Password:  ****
+*** certificate verify failed at depth 3
+Subject:  /C=DE/ST=Franconia/L=Nuremberg/O=SUSE Linux Products GmbH/OU=OPS Services/CN=SUSE Trust Root/emailAddress=rd-adm@suse.de
+Issuer:   /C=DE/ST=Franconia/L=Nuremberg/O=SUSE Linux Products GmbH/OU=OPS Services/CN=SUSE Trust Root/emailAddress=rd-adm@suse.de
+Valid:  Dec  6 00:00:00 2011 GMT - Dec  5 23:59:59 2041 GMT
+Fingerprint(MD5):   65450722D4AA0FE988A8B70E10360D80
+Fingerprint(SHA1):  D1311A7E8C2A04DD81C923F3410F2D752F0B7681
+Reason: self signed certificate in certificate chain
+
+A certificate in the chain failed verification
+
+Would you like to
+0 - quit (default)
+1 - continue anyways
+2 - trust the server certificate permanently
+9 - review the server certificate
+
+Enter choice [0129]: 2
+Devel:AAC
+```
+... a few thousand lines after this listing projects in api.suse.de
+
+
+4. Install qemu-kvm
+```
+sudo zypper install qemu-kvm
+```
+5. Add user to kvm group. In this example username = ardana
+```
+sudo usermod -aG kvm ardana
 ```
 
-Clone repos:
+6. Clone repos:
 ```
-   mkdir clm
-   cd clm
-   git clone https://github.com/spacefito/ardana-dev-tools.git
-   git clone https://github.com/spacefito/ardana-input-model.git
+mkdir clm
+cd clm
+git clone https://github.com/spacefito/ardana-dev-tools.git
+git clone https://github.com/spacefito/ardana-input-model.git
 ```
 
-Set up runtime environment to assure correct ansible version is used:
+7. Set up runtime environment to assure correct ansible version is used:
 ```
-   source ~/.bashrc
+source ~/.bashrc
 ```
 or 
 ```
-   eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
+eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
+```
+
+8. Setup/initialize development environment 
+```
+~/clm/ardana-dev-tools/bin/dev-env-setup
+```
+
+9. Deploy a minimal system: 
+```
+cd ~/clm/ardana-dev-tools/bin
+./astack.sh  --pre-destroy dac-min
 ```
