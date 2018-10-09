@@ -2,7 +2,7 @@ QUICK GUIDE:
 ============
 Configure bash environment:
 ---------------------------
-replace "ardanausername" with what you use.
+Add to ~/.bashrc (replace "ardanausername" with what you use).
  ```
 export ARDANA_DEVELOPER=True
 export ARDANA_VAGRANT_VERSION=1.8.7
@@ -48,8 +48,8 @@ Would you like to
 
 Enter choice [0129]: 2
 Devel:AAC
+... and a few thoushand lines more.
 ```
-... a few thousand lines after this listing projects in api.suse.de
 
 
 Install qemu-kvm:
