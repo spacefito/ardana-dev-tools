@@ -111,5 +111,5 @@ Deploy a minimal system:
 ------------------------
 ```
 cd ~/clm/ardana-dev-tools/bin
-./astack.sh  --pre-destroy dac-min
+./astack.sh  --c8 dac-min
 ```
