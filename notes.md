@@ -1,7 +1,7 @@
 QUICK GUIDE:
 ============
-Add to ~/.bashrc:
------------------
+Configure bash environment:
+---------------------------
 replace "ardanausername" with what you use.
  ```
 export ARDANA_DEVELOPER=True
