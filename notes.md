@@ -89,6 +89,15 @@ Setup/initialize development environment:
 ~/clm/ardana-dev-tools/bin/dev-env-setup
 ```
 
+Checkout the branch you want to test:
+-------------------------------------
+```
+cd ~/clm/ardana-input-model
+git checkout stable/pike
+cd ~/clm/ardana-dev-tools
+git checkout stable/pike
+```
+
 Deploy a minimal system: 
 ------------------------
 ```
