@@ -57,11 +57,20 @@ Install qemu-kvm:
 ```
 sudo zypper install qemu-kvm
 ```
+
+Install libvirtd:
+-----------------
+```
+sudo zypper install libvirt
+systemctl status libvirtd
+systemctl start libvirtd
+usermod -aG libvirt ardanausername
+
+```
 Add user to kvm group:
 ---------------------
-In this example username = ardana
 ```
-sudo usermod -aG kvm ardana
+sudo usermod -aG kvm ardanausername
 ```
 
 Clone repos:
