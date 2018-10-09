@@ -1,6 +1,8 @@
 QUICK GUIDE:
 ============
-*  Add to ~/.bashrc (replace "ardanausername" to what you use.)
+Add to ~/.bashrc:
+-----------------
+replace "ardanausername" with what you use.
  ```
 export ARDANA_DEVELOPER=True
 export ARDANA_VAGRANT_VERSION=1.8.7
@@ -9,12 +11,13 @@ export ARDANA_SITE=provo
 eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
 ```
 
-* Install git:
-
+Install git:
+-------------
 ```
 sudo zypper install git-core
 ```
-* Install OSC
+Install OSC:
+------------
 ```
 sudo zypper install osc
 ```
@@ -49,16 +52,20 @@ Devel:AAC
 ... a few thousand lines after this listing projects in api.suse.de
 
 
-* Install qemu-kvm
+Install qemu-kvm:
+-----------------
 ```
 sudo zypper install qemu-kvm
 ```
-* Add user to kvm group. In this example username = ardana
+Add user to kvm group:
+---------------------
+In this example username = ardana
 ```
 sudo usermod -aG kvm ardana
 ```
 
-* Clone repos:
+Clone repos:
+------------
 ```
 mkdir clm
 cd clm
@@ -66,7 +73,8 @@ git clone https://github.com/spacefito/ardana-dev-tools.git
 git clone https://github.com/spacefito/ardana-input-model.git
 ```
 
-* Set up runtime environment to assure correct ansible version is used:
+Set up runtime environment to assure correct ansible version is used:
+---------------------------------------------------------------------
 ```
 source ~/.bashrc
 ```
@@ -75,12 +83,14 @@ or
 eval "$(~/clm/ardana-dev-tools/bin/ardana-env)"
 ```
 
-* Setup/initialize development environment 
+Setup/initialize development environment: 
+-----------------------------------------
 ```
 ~/clm/ardana-dev-tools/bin/dev-env-setup
 ```
 
-* Deploy a minimal system: 
+Deploy a minimal system: 
+------------------------
 ```
 cd ~/clm/ardana-dev-tools/bin
 ./astack.sh  --pre-destroy dac-min
