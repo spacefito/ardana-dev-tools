@@ -1,5 +1,10 @@
 QUICK GUIDE:
 ============
+
+Tested on:
+----------
+- Leap 42.3 (Linux clm 4.4.155-68-default #1 SMP Tue Sep 11 13:07:19 UTC 2018 (4ecc783) x86_64 x86_64 x86_64 GNU/Linux)
+
 Configure bash environment:
 ---------------------------
 Add to ~/.bashrc (replace "ardanausername" with what you use).
